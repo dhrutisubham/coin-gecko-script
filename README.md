@@ -4,6 +4,8 @@ JavaScript Widget Script for CoinGecko Token
 ## Motivation
 This is a JavaScript script for a widget that, when added to a web page, retrieves and shows information from CoinGecko about a particular cryptocurrency token.
 
+## Screenshots
+![Demo Image](/coinGecko_token.js "Demo Image")
 
 ## Tech/framework used
 <b>Built with</b>
