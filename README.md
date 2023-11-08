@@ -30,8 +30,11 @@ The following token details are displayed within the embedded script's container
 The widget script renders the token details in a user-friendly format, making it easy for website visitors to access and understand the information.
 
 ## Code Example
+```
 <script src="coingecko_token.js"></script>
 <div class="coingecko-widget" data-widget-name="bitcoin"></div>
+```
+
 
 
 ## Installation
