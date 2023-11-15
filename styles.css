@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+html, select, option{
+    font-family: 'Roboto', sans-serif;
+
+}
+
+html{
+    background: #ffffff;
+    background: linear-gradient(180deg, rgba(231, 236, 241, 0.65rgba(234, 241, 245, 0.625),245,1) 50%, rgba(255,255,255,1) 100%);
+    height: 100%;
+    width: 100%;
+    color: #000000cf;
+}
+
+body{
+    font-size: 16px;
+}
+
+.widget-preview{
+    padding: 2rem;
+    background-color: rgba(244, 247, 255, 0.501);
+    border-radius: 0.5rem;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.selector{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label{
+    display: block;
+    font-weight: 500;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.small-text{
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color:rgb(123, 123, 123);
+
+}
+
+.main-container{
+    margin: 2rem;
+
+}
+
+.preview-container{
+    display: flex;
+    justify-content: stretch;
+    gap: 1.5rem;
+}
+
+select{
+    min-width: 150px;
+    padding: 0.5rem;
+    border: none;
+    background-color: rgb(244, 247, 255);
+    border-radius: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    min-height: 50px;
+    appearance: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+option:hover{
+    background-color: white;
+}
+
+
+
+.custom-select{
+    position: relative;
+}
+.custom-arrow{
+  display: block;
+  --size: 0.25rem;
+  position: absolute;
+  content: "";
+  top: 48%;
+  right: 5%;
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  pointer-events: none;
+  /* top: 40%; */
+}
+
+
+option, select, option:checked{
+    padding: 1rem;
+    font-size: 0.9rem;
+}

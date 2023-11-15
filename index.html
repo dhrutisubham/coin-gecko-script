@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CoinGecko Token Widget</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="coingecko-widget" data-widget-name="bitcoin"></div>
-    <br>
-    <div class="coingecko-widget" data-widget-name="ethereum"></div>
-    <br>
-    <div class="coingecko-widget" data-widget-name="tether"></div>
-    <br>
-    <div class="coingecko-widget" data-widget-name="usd_coin"></div>
 
-    <script src="./coinGecko_token.js"></script>
+<body>
+    <div class="main-container">
+        <h1>CoinGecko Token Widget</h1>
+        <div class="preview-container">
+            <div class="selector">
+                <label for="tokenDropdown">Select Token:</label>
+                <div class="custom-select">
+                    <select id="tokenDropdown" onchange="updateWidget()">
+                        <option value="bitcoin">Bitcoin</option>
+                        <option value="ethereum">Ethereum</option>
+                        <option value="tether">Tether</option>
+                        <option value="usd_coin">USD Coin</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                </div>
+            </div>
+            <div class="widget-preview">
+                <h3 class="small-text">Widget Preview</h3>
+                <div id="widget" style="height: fit-content; width: 100%;">
+                    <div class="coingecko-widget" data-widget-name="bitcoin"></div>
+                </div>
+            </div>
+            <script src="./coinGecko_token.js"></script>
+
+
+        </div>
+    </div>
+    <script>
+        function updateWidget() {
+            var selectedToken = document.getElementById("tokenDropdown").value;
+            var widgetContainer = document.getElementById("widget");
+            // // Clear existing content in the widget container
+            widgetContainer.innerHTML = "";
+
+            // Create a new div element with the specified token name
+            var widgetDiv = document.createElement("div");
+            widgetDiv.setAttribute("class", "coingecko-widget");
+            widgetDiv.setAttribute("data-widget-name", selectedToken);
+
+            // Append the new div element to the widget container
+            widgetContainer.appendChild(widgetDiv);
+
+            // Reload the CoinGecko token script
+            // Dynamically create a script element and set its source to the script
+            var script = document.createElement('script');
+            script.src = './coinGecko_token.js';
+
+            // Append the script to the document body
+            document.body.appendChild(script);
+
+            // Call initCoinGeckoWidget after a brief delay
+            setTimeout(function () {
+                initCoinGeckoWidget(widgetDiv);
+            }, 500); // Adjust the delay as needed
+        }
+    </script>
+    <br>
+
+
+
 </html>
